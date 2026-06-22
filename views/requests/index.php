@@ -1,24 +1,24 @@
 <?php
 
-use app\models\Customers;
+use app\models\Requests;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\models\CustomersSearch $searchModel */
+/** @var app\models\RequestsSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Customers';
+$this->title = 'Requests';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="customers-index">
+<div class="requests-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Customers', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Request', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,12 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'customer_name',
+            'request_name',
             'address',
             'status',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Customers $model, $key, $index, $column) {
+                'urlCreator' => function ($action, Requests $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

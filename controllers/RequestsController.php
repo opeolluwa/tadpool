@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\Customers;
-use app\models\CustomersSearch;
+use app\models\Requests;
+use app\models\RequestsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CustomersController implements the CRUD actions for Customers model.
+ * RequestsController implements the CRUD actions for Requests model.
  */
-class CustomersController extends Controller
+class RequestsController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class CustomersController extends Controller
     }
 
     /**
-     * Lists all Customers models.
+     * Lists all Requests models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new CustomersSearch();
+        $searchModel = new RequestsSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class CustomersController extends Controller
     }
 
     /**
-     * Displays a single Customers model.
+     * Displays a single Requests model.
      * @param string $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +61,13 @@ class CustomersController extends Controller
     }
 
     /**
-     * Creates a new Customers model.
+     * Creates a new Requests model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Customers();
+        $model = new Requests();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,7 +83,7 @@ class CustomersController extends Controller
     }
 
     /**
-     * Updates an existing Customers model.
+     * Updates an existing Requests model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id ID
      * @return string|\yii\web\Response
@@ -103,7 +103,7 @@ class CustomersController extends Controller
     }
 
     /**
-     * Deletes an existing Customers model.
+     * Deletes an existing Requests model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id ID
      * @return \yii\web\Response
@@ -117,15 +117,15 @@ class CustomersController extends Controller
     }
 
     /**
-     * Finds the Customers model based on its primary key value.
+     * Finds the Requests model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id ID
-     * @return Customers the loaded model
+     * @return Requests the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Customers::findOne(['id' => $id])) !== null) {
+        if (($model = Requests::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

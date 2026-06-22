@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Customers;
+use app\models\Requests;
 
 /**
- * CustomersSearch represents the model behind the search form of `app\models\Customers`.
+ * RequestsSearch represents the model behind the search form of `app\models\Requests`.
  */
-class CustomersSearch extends Customers
+class RequestsSearch extends Requests
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class CustomersSearch extends Customers
     public function rules()
     {
         return [
-            [['id', 'customer_name', 'address', 'status'], 'safe'],
+            [['id', 'request_name', 'address', 'status'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class CustomersSearch extends Customers
      */
     public function search($params, $formName = null)
     {
-        $query = Customers::find();
+        $query = Requests::find();
 
         // add conditions that should always apply here
 
@@ -58,7 +58,7 @@ class CustomersSearch extends Customers
 
         // grid filtering conditions
         $query->andFilterWhere(['like', 'id', $this->id])
-            ->andFilterWhere(['like', 'customer_name', $this->customer_name])
+            ->andFilterWhere(['like', 'request_name', $this->request_name])
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'status', $this->status]);
 

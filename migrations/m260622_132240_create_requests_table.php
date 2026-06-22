@@ -3,7 +3,7 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%customers}}`.
+ * Handles the creation of table `{{%requests}}`.
  */
 class m260622_132240_create_customers_table extends Migration
 {
@@ -12,21 +12,21 @@ class m260622_132240_create_customers_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('{{%customers}}', [
+        $this->createTable('{{%requests}}', [
             'id' => $this->string(36),
-            'customer_name' => $this->string()->notNull(),
+            'request_name' => $this->string()->notNull(),
             'address' => $this->string()->notNull(),
             'status' => "ENUM('approved', 'pending', 'blocked', 'revoked') NOT NULL DEFAULT 'pending'",
         ]);
 
 
         $this->addPrimaryKey(
-            'pk-customers',
-            'customers',
+            'pk-requests',
+            'requests',
             'id'
         );
 
-        
+
     }
 
 
@@ -36,6 +36,6 @@ class m260622_132240_create_customers_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%customers}}');
+        $this->dropTable('{{%requests}}');
     }
 }

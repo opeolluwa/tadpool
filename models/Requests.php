@@ -6,14 +6,14 @@ use Ramsey\Uuid\Uuid;
 use Yii;
 
 /**
- * This is the model class for table "customers".
+ * This is the model class for table "requests".
  *
  * @property string $id
- * @property string|null $customer_name
+ * @property string|null $request_name
  * @property string|null $address
  * @property string $status
  */
-class Customers extends \yii\db\ActiveRecord
+class Requests extends \yii\db\ActiveRecord
 {
 
     /**
@@ -29,7 +29,7 @@ class Customers extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'customers';
+        return 'requests';
     }
 
     /**
@@ -38,11 +38,11 @@ class Customers extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['customer_name', 'address'], 'default', 'value' => null],
+            [['request_name', 'address'], 'default', 'value' => null],
             [['status'], 'default', 'value' => 'pending'],
             [['status'], 'string'],
             [['id'], 'string', 'max' => 36],
-            [['customer_name', 'address'], 'string', 'max' => 255],
+            [['request_name', 'address'], 'string', 'max' => 255],
             ['status', 'in', 'range' => array_keys(self::optsStatus())],
             [['id'], 'unique'],
         ];
@@ -55,7 +55,7 @@ class Customers extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'customer_name' => 'Customer Name',
+            'request_name' => 'Request Name',
             'address' => 'Address',
             'status' => 'Status',
         ];

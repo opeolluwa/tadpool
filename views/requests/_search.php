@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var app\models\CustomersSearch $model */
+/** @var app\models\RequestsSearch $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="customers-search">
+<div class="requests-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'customer_name') ?>
+    <?= $form->field($model, 'request_name') ?>
 
     <?= $form->field($model, 'address') ?>
 

@@ -4,17 +4,17 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var app\models\Customers $model */
+/** @var app\models\Requests $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="customers-form">
+<div class="requests-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'id')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'customer_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'request_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
