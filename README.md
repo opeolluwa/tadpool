@@ -30,5 +30,5 @@ just cfg
 
 ## Help
 
-- Dev server URL live at <http://localhost:8080/index.php?r=customers%2Findex>
+- Dev server URL live at <http://localhost:8080/index.php?r=requests%2Findex>
 - Database UI live at <http://localhost:8087>

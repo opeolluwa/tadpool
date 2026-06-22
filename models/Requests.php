@@ -55,7 +55,7 @@ class Requests extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'request_name' => 'Request Name',
+            'request_name' => ' Name',
             'address' => 'Address',
             'status' => 'Status',
         ];
