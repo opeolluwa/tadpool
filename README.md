@@ -12,8 +12,8 @@ The project uses Docker driven development + local install of Composer and PHP w
 
 - [Docker](https://docker.com)
 - [PHP](https://php.net)
-- [Yii]()
-- Composer
+- [Yii](https://www.yiiframework.com)
+- [Composer](getcomposer.org)
 
 ### Installing
 
